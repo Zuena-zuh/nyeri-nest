@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find rental homes in Nyeri, Kenya.">
+  <title>NyeriNest | Find a place to call home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="brand" aria-label="NyeriNest home">
+      <span class="brand-icon">N</span>
+      <span>Nyeri<span class="brand-green">Nest</span></span>
+    </a>
+
+   <nav>
+    <a href="#rentals">Find a home</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#trust">Safety</a>
+
+    <div class="nav-account">
+    <button id="loginBtn" class="nav-login">Log in</button>
+
+    <button id="signupBtn" class="nav-signup">
+        Create account
+    </button>
+
+    <a href="#" id="dashboardLink" class="nav-my-listings" hidden>
+        My Listings
+    </a>
+
+    <button id="logoutBtn" class="nav-logout" hidden>
+        Log out
+    </button>
+</div>
+</nav>
+    <button class="btn btn-dark" id="listProperty">List your property ↗</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot"></span> YOUR NEXT CHAPTER STARTS HERE</span>
+        <h1>Find a place<br>to <span>call home.</span></h1>
+        <p>Discover rental homes around Nyeri, compare your options and find a space that feels right for you.</p>
+        <a href="#rentals" class="btn btn-green">Explore rentals <span>→</span></a>
+        <div class="hero-note">Made for your next move in Nyeri, Kenya.</div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1100&q=85"
+             alt="Modern home with a garden">
+        <div class="floating-note">
+          <span class="note-icon">⌂</span>
+          <div><strong>Your next home</strong><small>Starts with a search.</small></div>
+        </div>
+        <div class="hero-stamp">A HOME<br>FOR EVERY<br>NEW BEGINNING.</div>
+      </div>
+    </section>
+
+    <section class="search-section" id="rentals">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">LET'S FIND YOUR PLACE</span>
+          <h2>Rentals around Nyeri</h2>
+        </div>
+        <p>Set your preferences. Explore at your pace.</p>
+      </div>
+
+      <div class="filter-panel">
+        <label>
+          <span>Neighbourhood</span>
+          <select id="location">
+            <option value="">All areas</option>
+            <option value="Nyeri Town">Nyeri Town</option>
+            <option value="King'ong'o">King'ong'o</option>
+            <option value="Kamakwa">Kamakwa</option>
+            <option value="Ruring'u">Ruring'u</option>
+            <option value="Skuta">Skuta</option>
+          </select>
+        </label>
+        <label>
+          <span>Property type</span>
+          <select id="type">
+            <option value="">All types</option>
+            <option value="Bedsitter">Bedsitter</option>
+            <option value="Studio">Studio</option>
+            <option value="1 Bedroom">1 bedroom</option>
+            <option value="2 Bedroom">2 bedrooms</option>
+            <option value="3 Bedroom">3 bedrooms</option>
+          </select>
+        </label>
+        <label>
+          <span>Minimum rent (KSh)</span>
+          <input id="minRent" type="number" min="0" placeholder="e.g. 5,000">
+        </label>
+        <label>
+          <span>Maximum rent (KSh)</span>
+          <input id="maxRent" type="number" min="0" placeholder="e.g. 15,000">
+        </label>
+        <button id="searchBtn" class="btn btn-green search-btn">Find homes →</button>
+      </div>
+
+      <div class="results-toolbar">
+        <p id="resultCount" aria-live="polite">Loading rentals…</p>
+        <div class="sort-control">
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option value="newest">Recently added</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="property-grid" id="propertyGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>⌂</span>
+        <h3>No homes match those filters yet</h3>
+        <p>Try a different budget or neighbourhood.</p>
+        <button id="clearFilters" class="btn btn-dark">Clear filters</button>
+      </div>
+      <p class="demo-disclaimer">
+    Listings displayed on NyeriNest have passed our initial review.
+    Always confirm availability and property details before making arrangements.
+</p>
+    </section>
+
+    <section class="trust-section" id="trust">
+      <div>
+        <span class="eyebrow">CLARITY BUILDS TRUST</span>
+        <h2>Know what a label<br>actually means.</h2>
+        <p>Finding a home should feel exciting, not uncertain. Our planned verification labels will explain what has actually been checked.</p>
+      </div>
+      <div class="trust-list">
+        <article><span class="trust-icon">✓</span><div><strong>Identity checked</strong><p>The advertiser's identity has been reviewed.</p></div></article>
+        <article><span class="trust-icon">⌂</span><div><strong>Authority to list checked</strong><p>Evidence that the advertiser may advertise the property has been reviewed.</p></div></article>
+        <article><span class="trust-icon">↻</span><div><strong>Availability confirmed</strong><p>The listing's availability was reconfirmed on a displayed date.</p></div></article>
+        <p class="trust-footnote">These are planned labels. No sample listing on this demo has been verified.</p>
+      </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <span class="eyebrow">A SIMPLER WAY TO SEARCH</span>
+      <h2>Your next move, in three steps.</h2>
+      <div class="steps">
+        <article><span>01</span><h3>Set your budget</h3><p>Choose a price range and the kind of home you need.</p></article>
+        <article><span>02</span><h3>Compare homes</h3><p>Review photos, locations, prices and listing details.</p></article>
+        <article><span>03</span><h3>Make an enquiry</h3><p>Contact the advertiser to arrange a viewing and verify details.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="brand"><span class="brand-icon">N</span><span>Nyeri<span class="brand-green">Nest</span></span></a>
+    <p>Helping you find your next place to call home.</p>
+    <small>NyeriNest demo · Built for a Nyeri rental pilot</small>
+  </footer>
+
+  <dialog id="propertyDialog" class="property-dialog">
+    <button class="dialog-close" id="closeDialog" aria-label="Close property details">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+<dialog id="contactDialog" class="property-dialog">
+  <button class="dialog-close" id="closeContact" aria-label="Close">×</button>
+
+  <div class="dialog-body">
+    <span class="eyebrow">LIST WITH NYERINEST</span>
+    <h2>Let's make room for your property.</h2>
+    <p>Share your property details with us. New listings will be reviewed before appearing publicly.</p>
+
+    <form id="propertySubmissionForm">
+
+      <label for="propertyTitle">Property title</label>
+      <input type="text" id="propertyTitle" placeholder="e.g. Spacious 2-bedroom apartment" required maxlength="100">
+
+
+<label for="propertyType">Property type</label>
+<select id="propertyType" required>
+    <option value="">Select property type</option>
+    <option value="bedsitter">Bedsitter</option>
+    <option value="studio">Studio</option>
+    <option value="1 bedroom">1 Bedroom</option>
+    <option value="2 bedroom">2 Bedrooms</option>
+    <option value="3 bedroom">3 Bedrooms</option>
+    <option value="other">Other</option>
+</select>
+
+      <label for="propertyNeighbourhood">Neighbourhood</label>
+      <input type="text" id="propertyNeighbourhood" placeholder="e.g. Skuta, Nyeri" required>
+
+      <label for="propertyLocation">More specific location (optional)</label>
+      <input type="text" id="propertyLocation" placeholder="e.g. Near the main road">
+
+      <label for="propertyRent">Monthly rent (KSh)</label>
+      <input type="number" id="propertyRent" min="1" placeholder="e.g. 12000" required>
+
+      <label for="propertyBedrooms">Bedrooms</label>
+      <input type="number" id="propertyBedrooms" min="0" placeholder="e.g. 2">
+
+      <label for="propertyBathrooms">Bathrooms</label>
+      <input type="number" id="propertyBathrooms" min="0" placeholder="e.g. 1">
+
+      <label for="propertyDescription">Property description</label>
+      <textarea id="propertyDescription" rows="4" placeholder="Tell potential tenants about the property..." maxlength="2000"></textarea>
+
+      <button type="submit" class="btn btn-green" id="submitPropertyBtn">
+        Submit property
+      </button>
+
+    </form>
+
+    <p id="propertySubmissionMessage" role="status" aria-live="polite"></p>
+  </div>
+</dialog>
+
+
+  <!-- Authentication Dialog -->
+  <dialog id="authDialog" class="property-dialog">
+    <button class="dialog-close" id="closeAuth" aria-label="Close">×</button>
+
+    <div class="dialog-body">
+      <div id="signupForm">
+        <span class="eyebrow">JOIN NYERINEST</span>
+        <h2>Create your account</h2>
+        <p>Start your journey to finding a place to call home.</p>
+
+        <form id="createAccountForm">
+          <label for="signupName">Full name</label>
+          <input type="text" id="signupName" placeholder="Your full name" required>
+
+          <label for="signupEmail">Email address</label>
+          <input type="email" id="signupEmail" placeholder="Your email" required>
+
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" placeholder="At least 8 characters" minlength="8" required>
+
+          <button type="submit" class="btn btn-green">Create account</button>
+        </form>
+
+        <p>Already have an account?
+          <button type="button" id="showLogin">Log in</button>
+        </p>
+      </div>
+
+      <div id="loginForm" hidden>
+        <span class="eyebrow">WELCOME BACK</span>
+        <h2>Log in to NyeriNest</h2>
+
+        <form id="loginAccountForm">
+          <label for="loginEmail">Email address</label>
+          <input type="email" id="loginEmail" placeholder="Your email" required>
+
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Your password" required>
+
+          <button type="submit" class="btn btn-green">Log in</button>
+        </form>
+
+        <p>New to NyeriNest?
+          <button type="button" id="showSignup">Create an account</button>
+        </p>
+      </div>
+
+      <p id="authMessage" role="status" aria-live="polite"></p>
+    </div>
+  </dialog>
+
+<!-- Supabase JavaScript library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Your Supabase connection -->
+<script src="supabase-client.js"></script>
+
+<!-- Your existing website JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Listings | NyeriNest</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="listing-page">
+
+    <header class="listing-header">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">N</span>
+            <span>NyeriNest</span>
+        </a>
+
+        <a href="index.html" class="back-home">← Back to home</a>
+    </header>
+
+    <main class="dashboard-main">
+
+        <section class="dashboard-intro">
+            <span class="eyebrow">LANDLORD DASHBOARD</span>
+
+            <h1>Your properties, <span>all in one place.</span></h1>
+
+            <p>
+                Keep track of your property submissions and see their review status.
+            </p>
+
+            <a href="list-property.html" class="btn btn-green">
+                + List a property
+            </a>
+        </section>
+
+        <section class="dashboard-summary">
+            <div class="summary-card">
+                <span>Total listings</span>
+                <strong id="totalListings">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <span>Pending review</span>
+                <strong id="pendingListings">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <span>Approved</span>
+                <strong id="approvedListings">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <span>Rejected</span>
+                <strong id="rejectedListings">0</strong>
+            </div>
+        </section>
+
+        <section class="dashboard-properties">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="eyebrow">YOUR ACTIVITY</span>
+                    <h2>Your property listings</h2>
+                </div>
+            </div>
+
+            <p id="dashboardMessage" role="status" aria-live="polite">
+                Loading your properties...
+            </p>
+
+            <div id="myProperties" class="my-properties-grid"></div>
+        </section>
+
+    </main>
+
+    <footer class="listing-footer">
+        <p>NyeriNest · Helping you find a place to call home.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="my-listings.js"></script>
+
+</body>
+</html>

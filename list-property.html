@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Property | NyeriNest</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="listing-page">
+
+    <!-- HEADER -->
+    <header class="listing-header">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">N</span>
+            <span>NyeriNest</span>
+        </a>
+
+        <a href="index.html" class="back-home">
+            ← Back to home
+        </a>
+    </header>
+
+    <!-- INTRODUCTION -->
+    <main class="listing-main">
+
+        <section class="listing-intro">
+            <span class="eyebrow">LIST WITH NYERINEST</span>
+
+            <h1>Give your property a place to be <span>discovered.</span></h1>
+
+            <p>
+                Share your property with people looking for a place
+                to call home in Nyeri.
+            </p>
+
+            <div class="listing-note">
+                <span>✦</span>
+                Every new listing is reviewed before appearing publicly.
+            </div>
+        </section>
+
+        <!-- SUBMISSION FORM -->
+        <section class="listing-form-card">
+
+            <div class="form-heading">
+                <div>
+                    <span class="eyebrow">PROPERTY INFORMATION</span>
+                    <h2>Tell us about your property</h2>
+                    <p>Start with the basic details of your space.</p>
+                </div>
+
+                <span class="form-step">01 / 01</span>
+            </div>
+
+            <form id="propertySubmissionForm">
+
+                <!-- PROPERTY DETAILS -->
+                <div class="form-section">
+                    <h3>01. Property details</h3>
+
+                    <label for="propertyTitle">Property title</label>
+                    <input
+                        type="text"
+                        id="propertyTitle"
+                        placeholder="e.g. Spacious 2-bedroom apartment"
+                        maxlength="100"
+                        required
+                    >
+
+
+                        <!-- PROPERTY PHOTOS -->
+                        <div class="form-group">
+                            <label for="propertyPhotos">Property photos</label>
+
+                            <input
+                                type="file"
+                                id="propertyPhotos"
+                                name="propertyPhotos"
+                                accept="image/jpeg,image/png,image/webp"
+                                multiple
+                            >
+
+                            <small>
+                                Upload clear photos of your property.
+                                JPG, PNG and WebP images are accepted.
+                            </small>
+
+                            <p id="photoCount">
+                                 0 / 10 photos selected
+                            </p>
+
+                        </div>
+
+
+                    <label>Property type</label>
+
+                    <div class="property-type-grid">
+
+                        <label class="type-option">
+                            <input type="radio" name="propertyType" value="bedsitter" required>
+                            <span>Single room / Bedsitter</span>
+                        </label>
+
+                        <label class="type-option">
+                            <input type="radio" name="propertyType" value="studio">
+                            <span>Studio</span>
+                        </label>
+
+                        <label class="type-option">
+                            <input type="radio" name="propertyType" value="1 bedroom">
+                            <span>1 Bedroom</span>
+                        </label>
+
+                        <label class="type-option">
+                            <input type="radio" name="propertyType" value="2 bedroom">
+                            <span>2 Bedrooms</span>
+                        </label>
+
+                        <label class="type-option">
+                            <input type="radio" name="propertyType" value="3 bedroom">
+                            <span>3 Bedrooms</span>
+                        </label>
+
+                        <label class="type-option">
+                            <input type="radio" name="propertyType" value="other">
+                            <span>Other</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- LOCATION -->
+                <div class="form-section">
+                    <h3>02. Location</h3>
+
+                    <label for="propertyNeighbourhood">Neighbourhood</label>
+                    <input
+                        type="text"
+                        id="propertyNeighbourhood"
+                        placeholder="e.g. Skuta"
+                        required
+                    >
+
+                    <label for="propertyLocation">More specific location</label>
+                    <input
+                        type="text"
+                        id="propertyLocation"
+                        placeholder="e.g. Near the main road (optional)"
+                    >
+                </div>
+
+                <!-- RENTAL INFORMATION -->
+                <div class="form-section">
+                    <h3>03. Rental information</h3>
+
+                    <label for="propertyRent">Monthly rent (KSh)</label>
+                    <input
+                        type="number"
+                        id="propertyRent"
+                        min="1"
+                        placeholder="e.g. 12000"
+                        required
+                    >
+
+                    <div class="form-row">
+                        <div>
+                            <label for="propertyBedrooms">Bedrooms</label>
+                            <input
+                                type="number"
+                                id="propertyBedrooms"
+                                min="0"
+                                placeholder="e.g. 2"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="propertyBathrooms">Bathrooms</label>
+                            <input
+                                type="number"
+                                id="propertyBathrooms"
+                                min="0"
+                                placeholder="e.g. 1"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESCRIPTION -->
+                <div class="form-section">
+                    <h3>04. Describe your property</h3>
+
+                    <label for="propertyDescription">Property description</label>
+                    <textarea
+                        id="propertyDescription"
+                        rows="5"
+                        maxlength="2000"
+                        placeholder="Tell potential tenants what makes this property special..."
+                    ></textarea>
+                </div>
+
+                <div class="listing-submit-area">
+                    <p>
+                        By submitting, you confirm that the information
+                        provided is accurate.
+                    </p>
+
+                    <button type="submit" id="submitPropertyBtn" class="btn btn-green">
+                        Submit property →
+                    </button>
+
+                    <p id="propertySubmissionMessage" role="status" aria-live="polite"></p>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="listing-footer">
+        <p>NyeriNest · Helping you find a place to call home.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="list-property.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | NyeriNest</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="listing-page">
+
+    <header class="listing-header">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">N</span>
+            <span>NyeriNest</span>
+        </a>
+
+        <a href="index.html" class="back-home">← Back to home</a>
+    </header>
+
+    <main class="dashboard-main">
+
+        <section class="dashboard-intro">
+            <span class="eyebrow">ADMINISTRATION</span>
+
+            <h1>Review and manage <span>property listings.</span></h1>
+
+            <p>
+                Review landlord submissions and manage which properties
+                become visible on NyeriNest.
+            </p>
+        </section>
+
+        <section class="dashboard-summary">
+
+            <div class="summary-card">
+                <span>Pending review</span>
+                <strong id="adminPending">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <span>Approved</span>
+                <strong id="adminApproved">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <span>Rejected</span>
+                <strong id="adminRejected">0</strong>
+            </div>
+
+        </section>
+
+        <section class="dashboard-properties">
+
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="eyebrow">MODERATION QUEUE</span>
+                    <h2>Property submissions</h2>
+                </div>
+            </div>
+
+            <p id="adminMessage" role="status" aria-live="polite">
+                Loading submissions...
+            </p>
+
+            <div id="adminProperties" class="my-properties-grid"></div>
+
+        </section>
+
+    </main>
+
+    <footer class="listing-footer">
+        <p>NyeriNest · Helping you find a place to call home.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>
